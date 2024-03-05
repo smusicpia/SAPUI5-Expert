@@ -1,0 +1,11 @@
+{
+    "prettier.withNodeModules": true,
+    "prettier.useTabs": true,
+    "prettier.singleAttributePerLine": true,
+    "sapbas.lastDebugSession": {
+
+
+    },
+    "prettier.useEditorConfig": false,
+    "prettier.vueIndentScriptAndStyle": true
+}

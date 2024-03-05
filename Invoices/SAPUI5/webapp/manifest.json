@@ -33,7 +33,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "rootView": {
       "viewName": "logaligroup.SAPUI5.view.App",
       "type": "XML",
@@ -63,6 +63,10 @@
         "settings": {
           "bundleName": "logaligroup.SAPUI5.i18n.i18n"
         }
+      },
+      "invoices": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Invoices.json"
       }
     },
     "resources": {
