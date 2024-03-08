@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="logaligroup.SAPUI5.controller.App"
+    xmlns:m="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <m:Page title="{i18n>appTitle}">
+        <m:headerContent>
+            <m:Button id="helloDialogHeader"
+                      icon="sap-icon://action"
+                      press=".onOpenDialogHeader"
+                      class="sapUiSmallMarginEnd"/>
+        </m:headerContent>
+        <m:content>
+            <mvc:XMLView viewName="logaligroup.SAPUI5.view.HelloPanel" />
+            <mvc:XMLView viewName="logaligroup.SAPUI5.view.InvoicesList" />
+        </m:content>
+    </m:Page>
+</mvc:View>
