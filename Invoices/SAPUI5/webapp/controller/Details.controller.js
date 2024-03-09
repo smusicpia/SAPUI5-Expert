@@ -16,6 +16,7 @@ function(Controller, History, UIComponent) {
 	return Controller.extend("logaligroup.SAPUI5.controller.Details", {
 
 		_onObjectMatch: function(oEvent){
+			this.byId("rating").reset();
 			this.getView().bindElement({
 				path: "/" + window.decodeURIComponent(oEvent.getParameter("arguments").invoicePath),
 				model: "northwind"
@@ -37,6 +38,13 @@ function(Controller, History, UIComponent) {
 				const oRouter = UIComponent.getRouterFor(this);
 				oRouter.navTo("RouteApp", {}, true);
 			}
+		},
+
+		onRatingChange: function(oEvent) {
+			const fValue = oEvent.getParameter("value");
+			const oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+
+			sap.m.MessageToast.show(oResourceBundle.getText("ratingConfirmation", [fValue]));
 		}
 	});
 });
