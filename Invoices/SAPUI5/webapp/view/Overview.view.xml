@@ -4,6 +4,14 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true">
     <m:Page title="{i18n>appTitle}">
+        <m:landmarkInfo>
+            <m:PageAccessibleLandmarkInfo rootRole="Region"
+                                          rootLabel="{i18n>overviewRootLabel}"
+                                          contentRole="Main"
+                                          contentLabel="{i18n>overviewContentLabel}"
+                                          headerRole="Banner"
+                                          headerLabel="{i18n>overviewHeaderLabel}"/>
+        </m:landmarkInfo>
         <m:headerContent>
             <m:Button id="helloDialogHeader"
                       icon="sap-icon://action"

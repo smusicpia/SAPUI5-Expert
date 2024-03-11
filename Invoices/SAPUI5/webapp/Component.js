@@ -3,13 +3,15 @@ sap.ui.define([
     "sap/ui/core/UIComponent",
     "logaligroup/SAPUI5/model/Models",
     "sap/ui/model/resource/ResourceModel",
-    "./controller/HelloDialog"
+    "./controller/HelloDialog",
+    "sap/ui/Device"
 ],
     /**
      * @param {typeof sap.ui.core.UIComponent} UIComponent 
-     * @param {typeof sap.ui.model.resource.ResourceModel} ResourceModel 
+     * @param {typeof sap.ui.model.resource.ResourceModel} ResourceModel
+     * @param {typeof sap.ui.Device} Device
      */
-    function (UIComponent, Models, ResourceModel, HelloDialog) {
+    function (UIComponent, Models, ResourceModel, HelloDialog, Device) {
         return UIComponent.extend("logaligroup.SAPUI5.Component", {
 
             metadata: {
@@ -27,6 +29,8 @@ sap.ui.define([
                 //var i18nModel = new ResourceModel({ bundleName : "logaligroup.SAPUI5.i18n.i18n" });
                 //this.setModel(i18nModel, "i18n");
 
+                //ser the device model
+                this.setModel(Models.createDeviceModel(), "device");
                 this._helloDialog = new HelloDialog(this.getRootControl());
 
                 //create the views based on the url/hash
@@ -40,6 +44,16 @@ sap.ui.define([
 
             openHelloDialog: function(){
                 this._helloDialog.open();
+            },
+
+            getContentDensityClass: function () {
+                if (!Device.support.touch){
+                    this._sContentDensityClass = "SapUiSizeCompact";
+                } else {
+                    this._sContentDensityClass = "SapUiSizeCozy";
+                }
+
+                return this._sContentDensityClass;
             }
         });
     })

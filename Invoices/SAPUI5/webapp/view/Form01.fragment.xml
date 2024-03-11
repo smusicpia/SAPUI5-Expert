@@ -7,7 +7,8 @@
         headerText="{i18n>panelFrTitle}"
         class="sapUiResponsiveMargin"
         width="50%"
-    >
+        expandable="{device>/system/phone}"
+        expanded="{= !${device>/system/phone} }">
         <f:SimpleForm
             id="_IDSimpleForm1"
             editable="true"

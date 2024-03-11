@@ -4,19 +4,21 @@
     xmlns:core="sap.ui.core"
     displayBlock="true">
     <m:Panel
-        id="_IDGenPanel1"
         headerText="{i18n>helloPanel}"
         class="sapUiResponsiveMargin"
-        width="auto">
+        width="auto"
+        expandable="{device>/system/phone}"
+        expanded="{= !${device>/system/phone} }"
+        accessibleRole="Region">
         <m:content>
             <m:Button id="helloDialogButton"
                 icon="sap-icon://action"
                 text="{i18n>helloDialogButton}"
                 press=".onOpenDialog"
-                class="sapUiSmallMarginEnd"/>
+                class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/>
             <m:Button text="{i18n>showHelloButtonText}"
                 press=".onShowHello"
-                class="sapUiSmallMarginEnd"/>
+                class="sapUiSmallMarginEnd sapUiHideOnDesktop"/>
             <m:Input value="{/recipient/name}"
                 valueLiveUpdate="true"
                 width="60%"/>
